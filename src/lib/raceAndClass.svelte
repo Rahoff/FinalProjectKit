@@ -4,8 +4,6 @@
 
     let selected = undefined;
     let selectedClass = undefined;
-    //export let charRace = undefined;
-    //export let charClass = undefined;
 
     let race =[
         { id: 1, text: "Choose Race"},
@@ -31,8 +29,6 @@
 
     
 </script>
-
-<!-- <h1>Race: {selected ? selected.text : ['Waiting...']} <br> Class: {selectedClass ? selectedClass.text : ['waiting...']}</h1> -->
 
 <label>
     Select your race

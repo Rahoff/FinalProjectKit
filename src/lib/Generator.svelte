@@ -12,7 +12,6 @@
         abilityArray[i] = Math.floor((Math.random()*6) +1) +  Math.floor((Math.random() * 6) + 1) +  Math.floor((Math.random() * 6) + 1);
     }
     abilityArray = abilityArray.sort(function(a, b){return b-a});
-    console.log(abilityArray);
     finalName.subscribe( name =>{ newName = name.val });
     finalRace.subscribe( race =>{ newRace = race.val });
     finalClass.subscribe( job =>{ newClass = job.val });
@@ -25,48 +24,53 @@
 <h2>Class: { newClass }</h2>
 <ul>
     {#if newClass === "Fighter"}
-    <li>Strength = { abilityArray[0] }</li>
-    <li>Dexterity = { abilityArray[2] }</li>
-    <li>Constitution = { abilityArray[1] }</li>
-    <li>Intelligence = { abilityArray[3]} </li>
-    <li>Wisdom = { abilityArray[4] } </li>
-    <li>Charisma = { abilityArray[5] } </li>
+        <li>Strength = { abilityArray[0] }</li>
+        <li>Dexterity = { abilityArray[2] }</li>
+        <li>Constitution = { abilityArray[1] }</li>
+        <li>Intelligence = { abilityArray[3] } </li>
+        <li>Wisdom = { abilityArray[4] } </li>
+        <li>Charisma = { abilityArray[5] } </li>
+        <li>Hit Points = { Math.floor(Math.random()*10 + 1) }</li>
     {/if}
     {#if newClass === "Priest"}
-    <li>Strength = { abilityArray[3] }</li>
-    <li>Dexterity = { abilityArray[5] }</li>
-    <li>Constitution = { abilityArray[2] }</li>
-    <li>Intelligence = { abilityArray[4]} </li>
-    <li>Wisdom = { abilityArray[0] } </li>
-    <li>Charisma = { abilityArray[1] } </li>
+        <li>Strength = { abilityArray[3] }</li>
+        <li>Dexterity = { abilityArray[5] }</li>
+        <li>Constitution = { abilityArray[2] }</li>
+        <li>Intelligence = { abilityArray[4]} </li>
+        <li>Wisdom = { abilityArray[0] } </li>
+        <li>Charisma = { abilityArray[1] } </li>
+        <li>Hit Points = { Math.floor(Math.random()*8 + 1) }</li>
     {/if}
     {#if newClass === "Wizard"}
-    <li>Strength = { abilityArray[4] }</li>
-    <li>Dexterity = { abilityArray[1] }</li>
-    <li>Constitution = { abilityArray[2] }</li>
-    <li>Intelligence = { abilityArray[0]} </li>
-    <li>Wisdom = { abilityArray[3] } </li>
-    <li>Charisma = { abilityArray[5] } </li>
+        <li>Strength = { abilityArray[4] }</li>
+        <li>Dexterity = { abilityArray[1] }</li>
+        <li>Constitution = { abilityArray[2] }</li>
+        <li>Intelligence = { abilityArray[0]} </li>
+        <li>Wisdom = { abilityArray[3] } </li>
+        <li>Charisma = { abilityArray[5] } </li>
+        <li>Hit Points = { Math.floor(Math.random()*4 + 1) }</li>
     {/if}
     {#if newClass === "Rogue"}
-    <li>Strength = { abilityArray[1] }</li>
-    <li>Dexterity = { abilityArray[0] }</li>
-    <li>Constitution = { abilityArray[3] }</li>
-    <li>Intelligence = { abilityArray[2]} </li>
-    <li>Wisdom = { abilityArray[4] } </li>
-    <li>Charisma = { abilityArray[5] } </li>
+        <li>Strength = { abilityArray[1] }</li>
+        <li>Dexterity = { abilityArray[0] }</li>
+        <li>Constitution = { abilityArray[3] }</li>
+        <li>Intelligence = { abilityArray[2]} </li>
+        <li>Wisdom = { abilityArray[4] } </li>
+        <li>Charisma = { abilityArray[5] } </li>
+        <li>Hit Points = { Math.floor(Math.random()*6 + 1) }</li>
     {/if}
-</ul>>
+</ul>
 
 <style>
 	h1 {
-		color: blue;
+		color: darkcyan;
 	}
     h2{
-        color: blue;
+        color: darkcyan;
     }
     ul{
         color: darkcyan;
-        background-color: black;
+        background-color: white;
     }
+
 </style>

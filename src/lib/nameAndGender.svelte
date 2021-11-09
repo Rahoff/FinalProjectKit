@@ -20,8 +20,6 @@
 
 </script>
 
-<!-- <h1>Name: {name} <br>Sex: {selected ? selected.text : '[waiting...]'}</h1> -->
-
 <label>Enter a name
     <input type="text" bind:value={name} on:change={updateName(name)}>
 </label>
