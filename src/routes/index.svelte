@@ -3,18 +3,15 @@
     import NameAndGender from '$lib/nameAndGender.svelte';
 	import RaceAndClass from '$lib/raceAndClass.svelte';
 	import Generator from '$lib/Generator.svelte';
-	import SaveFile, {reRoll,  saveCharacter, printCharacter } from '$lib/saveFile.svelte';
+	import {reRoll,  saveCharacter, printCharacter } from '$lib/saveFile.svelte';
 	
 
 
-    let newName = $finalName.valueOf();
-	let newClass = $finalClass.valueOf();
-	let newGender = $finalGender.valueOf();
-	let newRace = $finalRace.valueOf();
+    // let newName = $finalName.valueOf();
+	// let newClass = $finalClass.valueOf();
+	// let newGender = $finalGender.valueOf();
+	// let newRace = $finalRace.valueOf();
 	let generateCharacter = false;
-
-
-
 
 </script>
 <h1>This application will allow you to generate a character.
@@ -24,9 +21,10 @@ All you need to do is pick a name and make a few selections from the following o
 <NameAndGender/>
 <RaceAndClass/>
 
-{#if $finalName != undefined }
+{#if $finalName && $finalClass && $finalGender && $finalRace }
 	<button on:click={ ()=> generateCharacter = true } >Roll character</button>
 {/if}
+
 {#if generateCharacter}
 	<div id="printArea">
 		<Generator/>
