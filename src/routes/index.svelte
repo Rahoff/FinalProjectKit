@@ -6,11 +6,6 @@
 	import {reRoll,  saveCharacter, printCharacter } from '$lib/saveFile.svelte';
 	
 
-
-    // let newName = $finalName.valueOf();
-	// let newClass = $finalClass.valueOf();
-	// let newGender = $finalGender.valueOf();
-	// let newRace = $finalRace.valueOf();
 	let generateCharacter = false;
 
 </script>
@@ -22,22 +17,41 @@ All you need to do is pick a name and make a few selections from the following o
 <RaceAndClass/>
 
 {#if $finalName && $finalClass && $finalGender && $finalRace }
-	<button on:click={ ()=> generateCharacter = true } >Roll character</button>
+	<button id="rollButton" on:click={ ()=> generateCharacter = true } >Roll character</button>
 {/if}
 
 {#if generateCharacter}
 	<div id="printArea">
 		<Generator/>
 	</div>
-    <button on:click={ ()=> reRoll()}>Reroll this one</button>
-	<button on:click={ ()=> printCharacter('printArea') }>Print Sheet</button>
-	<button on:click={ ()=> saveCharacter('printArea') }>Save as text</button>
+	<div id="buttonArea">
+		<button on:click={ ()=> reRoll()}>Reroll this one</button>
+		<button on:click={ ()=> printCharacter('printArea') }>Print</button>
+		<button on:click={ ()=> saveCharacter('printArea') }>Save</button>
+	</div>
+
 {/if}
 <style>
-    div{
+    #printArea{
 		position: absolute; left: 500px; top: 150px;
 		background-color: white;
 		width: 600px;
+		text-align: center;
+	}
+	#buttonArea{
+		position:absolute;left: 40%; top: 75%
+		
+	}
+	#rollButton{
+		position:absolute; left: 100px; top: 410px;
+	}
+	button  {
+		background-color: silver;
+		border-radius: 12px;
+		cursor: pointer;
+		border-color: silver;
+		border-style: outset;
+		border-width: 5px;
 	}
 </style>
 
