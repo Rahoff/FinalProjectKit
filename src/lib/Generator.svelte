@@ -18,7 +18,15 @@
     finalClass.subscribe( job =>{ newClass = job.val });
     finalGender.subscribe( gender =>{ newGender = gender.val });
 
+    // Roll hit points and adjust for a bonus from constitutuion and add one point if the roll is a one.
     if(newClass == "Fighter"){
+
+        if (newRace == "Dwarf"){
+            abilityArray[1] +=2;
+            abilityArray[5] -=2;
+            if (abilityArray[5] <= 0) abilityArray[5] = 1;
+        }
+
         hitPoints =  Math.floor(Math.random()*10 + 1);
         if(hitPoints == 1){
             hitPoints++;
@@ -37,6 +45,13 @@
         }
     }
     if (newClass == "Priest"){
+       
+        if (newRace == "Dwarf"){
+            abilityArray[2] +=2;
+            abilityArray[1] -=2;
+            if (abilityArray[1] <= 0) abilityArray[1] = 1;
+        }
+        
         hitPoints =  Math.floor(Math.random()*8 + 1);
         if(hitPoints == 1){
             hitPoints++;
@@ -55,6 +70,13 @@
         }
     }
     if(newClass == "Wizard"){
+
+        if (newRace == "Dwarf"){
+            abilityArray[2] +=2;
+            abilityArray[5] -=2;
+            if (abilityArray[5] <= 0) abilityArray[5] = 1;
+        }
+
         hitPoints =  Math.floor(Math.random()*4 + 1);
         if(hitPoints == 1){
             hitPoints++;
@@ -73,6 +95,13 @@
         }
     }
     if(newClass == "Rogue"){
+
+        if (newRace == "Dwarf"){
+            abilityArray[3] +=2;
+            abilityArray[5] -=2;
+            if (abilityArray[5] <= 0) abilityArray[5] = 1;
+        }
+
         hitPoints =  Math.floor(Math.random()*6 + 1);
         if(hitPoints == 1){
             hitPoints++;
@@ -92,6 +121,7 @@
     }
 
 </script>
+
 <h1>Name: { newName } </h1>
 <h2>Sex: { newGender }</h2>
 <h2>Race: { newRace }</h2>

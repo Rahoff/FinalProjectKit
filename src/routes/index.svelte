@@ -9,9 +9,10 @@
 	let generateCharacter = false;
 
 </script>
-<h1>This application will allow you to generate a character.
-All you need to do is pick a name and make a few selections from the following options.
-</h1>
+<div id="header">
+	<h1>This application will allow you to generate a D&D character.</h1>
+	<h1>Name your character and select options from the menu below.</h1>
+</div>
 
 <NameAndGender/>
 <RaceAndClass/>
@@ -32,6 +33,15 @@ All you need to do is pick a name and make a few selections from the following o
 
 {/if}
 <style>
+	#header{
+		background-color: black;
+		opacity: .5;
+		border-radius: 25px;
+	}
+	h1{
+		color:  darkcyan;
+		text-align: center;
+	}
     #printArea{
 		position: absolute; left: 500px; top: 150px;
 		background-color: white;
@@ -43,7 +53,7 @@ All you need to do is pick a name and make a few selections from the following o
 		
 	}
 	#rollButton{
-		position:absolute; left: 100px; top: 410px;
+		position:absolute; left: 100px; top: 450px;
 	}
 	button  {
 		background-color: silver;
